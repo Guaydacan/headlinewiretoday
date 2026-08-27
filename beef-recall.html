@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Headline Wire Today | Nearly 30,000 Pounds of Imported Beef Recalled After Inspection Step Was Skipped</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #18212b;
+      --muted: #68717d;
+      --line: #dde3ea;
+      --accent: #0f4c81;
+      --accent-2: #e8f1f8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .topbar {
+      background: #0f1720;
+      color: #fff;
+      font-size: 13px;
+      padding: 10px 16px;
+      overflow: hidden;
+      border-bottom: 1px solid #243142;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .ticker {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .ticker a {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #dfe8f3;
+    }
+    header {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      z-index: 10;
+    }
+    .header-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px;
+    }
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+    .logo span { color: var(--accent); }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .utility {
+      display: flex;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .progress-wrap {
+      height: 4px;
+      background: #dfe7f0;
+    }
+    .progress-bar {
+      height: 100%;
+      width: 0;
+      background: var(--accent);
+    }
+    .page {
+      max-width: 1280px;
+      margin: 24px auto;
+      padding: 0 16px 40px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 24px;
+      align-items: start;
+    }
+    .main, .sidebar, .module, .article-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 6px 20px rgba(16, 24, 40, 0.04);
+    }
+    .article-card { overflow: hidden; }
+    .article-inner { padding: 24px; }
+    .kicker {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.1;
+      margin: 0 0 12px;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 14px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 22px;
+    }
+    .hero, .img {
+      background: linear-gradient(135deg, #edf4fb, #d9e8f6);
+      border: 1px dashed #8ca9c6;
+      color: #345a7e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 700;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .hero {
+      margin: 0 24px 24px;
+      height: auto;
+      aspect-ratio: 1536 / 1024;
+      min-height: 220px;
+    }
+    .hero img, .img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: inherit;
+    }
+    .img.inline-rect { aspect-ratio: 480 / 320; min-height: 150px; }
+    .img.ad-300 { width: 100%; aspect-ratio: 1 / 1; }
+    .img.ad-450 { width: 100%; aspect-ratio: 2 / 3; }
+    .img.ad-600 { width: 100%; aspect-ratio: 3 / 2; min-height: 220px; }
+    .article-body p {
+      margin: 0 0 18px;
+      font-size: 18px;
+    }
+    .article-body h2 {
+      margin: 30px 0 14px;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+    .native-grid, .tiles, .timeline {
+      display: grid;
+      gap: 16px;
+    }
+    .tiles.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .tile, .sponsor-item, .timeline-item, .resource-item {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+      background: #fff;
+    }
+    .tile h3, .sponsor-item h3, .resource-item h3 {
+      font-size: 18px;
+      line-height: 1.25;
+      margin: 12px 0 8px;
+    }
+    .tile .label, .resource-item .label, .sponsor-item .label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .module {
+      padding: 18px;
+      margin-top: 20px;
+    }
+    .module h2, .sidebar h2 {
+      font-size: 20px;
+      margin: 0 0 14px;
+    }
+    aside.sidebar {
+      padding: 18px;
+      position: sticky;
+      top: 56px;
+    }
+    .sidebar-stack {
+      display: grid;
+      gap: 18px;
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+    .time {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .footer {
+      margin-top: 28px;
+      background: #fff;
+      border-top: 1px solid var(--line);
+    }
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 28px 16px 40px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+    .asset-list {
+      max-width: 1280px;
+      margin: 0 auto 40px;
+      padding: 0 16px;
+    }
+    .asset-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px;
+    }
+    .asset-card h2 { margin-top: 0; }
+    .asset-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+    .asset-card li { margin: 8px 0; }
+    @media (max-width: 980px) {
+      .page { grid-template-columns: 1fr; }
+      aside.sidebar { position: static; }
+      .tiles.three { grid-template-columns: 1fr; }
+      .ticker { grid-template-columns: 1fr; gap: 8px; }
+    }
+    @media (max-width: 640px) {
+      .header-inner { flex-direction: column; align-items: flex-start; }
+      .article-inner { padding: 18px; }
+      .hero { margin: 0 18px 18px; }
+      .article-body p { font-size: 17px; }
+      .timeline-item { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="ticker">
+      <a href="https://afflat3e1.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=22645&amp;c=918277&amp;a=310677&amp;k=08A6BBBDF6F7A0640ED8BADA005D5E27&amp;l=23506" target="_blank" rel="nofollow noopener sponsored">Worried After Eating Recalled Beef? Ask a Doctor Now</a>
+      <a href="https://afflat3e3.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=21096&amp;c=918277&amp;a=310677&amp;k=A94DD886C632534B8E51575BFFFF8B07&amp;l=22025" target="_blank" rel="nofollow noopener sponsored">Recalled Food In Your Home? Know Your Legal Options</a>
+      <a href="https://afflat3e3.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=22649&amp;c=918277&amp;a=310677&amp;k=803FA50BA981DF149B701994F4AFE7BF&amp;l=23509" target="_blank" rel="nofollow noopener sponsored">Car Trouble? Get Real Answers From a Mechanic Fast</a>
+      <a href="https://afflat3e1.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=21609&amp;c=918277&amp;a=310677&amp;k=44921D0BAACF205D65353A5D28CBF44A&amp;l=22511" target="_blank" rel="nofollow noopener sponsored">Need Cash Before Payday? See If You Qualify Today</a>
+    </div>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo">Headline Wire <span>Today</span></div>
+      <nav>
+        <a href="#">U.S.</a>
+        <a href="#">Business</a>
+        <a href="#">Technology</a>
+        <a href="#">World</a>
+        <a href="#">Politics</a>
+        <a href="#">Health</a>
+      </nav>
+      <div class="utility">
+        <a href="#">Search</a>
+        <a href="#">Menu</a>
+      </div>
+    </div>
+    <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+  </header>
+
+  <main class="page">
+    <section class="main">
+      <article class="article-card">
+        <div class="hero">
+          <img src="assets/IMG_HERO_beef_recall_1536x1024.webp" alt="Packaged raw beef on a refrigerated supermarket shelf">
+        </div>
+        <div class="article-inner">
+          <div class="kicker">Food Safety</div>
+          <h1>Nearly 30,000 Pounds of Imported Beef Recalled After Inspection Step Was Skipped</h1>
+          <div class="meta">
+            <span>By Headline Wire Today Staff</span>
+            <span id="publishDate">Published April 6, 2026</span>
+            <span>6 min read</span>
+          </div>
+
+          <div class="article-body">
+            <p>Federal regulators have recalled nearly 30,000 pounds of raw beef imported from Argentina after the shipment entered the United States without undergoing a mandatory inspection step. The U.S. Department of Agriculture&rsquo;s Food Safety and Inspection Service announced the action on August 7, covering 29,628 pounds of product distributed to retailers in Florida and Texas.</p>
+
+            <p>The importer, Corte Argentino USA LLC of Aventura, Florida, brought the meat into the country without presenting it for import reinspection. That checkpoint is not optional. Every shipment of foreign meat, poultry and egg product must be examined by FSIS after clearing U.S. Customs and Border Protection, and inspectors review documentation, labeling, packaging and the physical condition of the product before it is allowed into commerce.</p>
+
+            <h2>What was recalled and how to identify it</h2>
+
+            <p>The affected beef was produced between May 15 and May 20 of this year and carries use-or-freeze-by dates between September 15 and September 20. It was sold under the Frigorifico Gorina SAIC brand in cardboard boxes of varying weights. The cuts include boneless top sirloin butt, eye round, topside cap off, flat and knuckle.</p>
+
+            <p>Products bear the Argentinian establishment number &ldquo;EST. N&deg; OF. 2025&rdquo; and the shipping mark &ldquo;26644-AA.&rdquo; Those markings are the reliable way to identify the recalled meat, since the boxes themselves vary in size and weight.</p>
+
+            <div class="module">
+              <h2>Contextual links</h2>
+              <div class="tiles three">
+                <a class="resource-item" href="https://afflat3e1.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=22645&amp;c=918277&amp;a=310677&amp;k=08A6BBBDF6F7A0640ED8BADA005D5E27&amp;l=23506" target="_blank" rel="nofollow noopener sponsored">
+                  <div class="img inline-rect"><img src="assets/IMG_CONTEXT_1_beef_480x320.webp" alt="Contextual resource 1"></div>
+                  <h3>Ate Something You Are Not Sure About? Talk to a Doctor in Minutes</h3>
+                  <div class="label">Health • 3 min read</div>
+                </a>
+                <a class="resource-item" href="https://afflat3e3.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=22649&amp;c=918277&amp;a=310677&amp;k=803FA50BA981DF149B701994F4AFE7BF&amp;l=23509" target="_blank" rel="nofollow noopener sponsored">
+                  <div class="img inline-rect"><img src="assets/IMG_CONTEXT_2_beef_480x320.webp" alt="Contextual resource 2"></div>
+                  <h3>What Are Your Rights When a Recalled Product Reaches Your Kitchen?</h3>
+                  <div class="label">Consumer • 4 min read</div>
+                </a>
+                <a class="resource-item" href="https://afflat3e1.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=14429&amp;c=918277&amp;a=310677&amp;k=BFCE835D07E00D2D94212461B5931EFE&amp;l=15268" target="_blank" rel="nofollow noopener sponsored">
+                  <div class="img inline-rect"><img src="assets/IMG_CONTEXT_3_beef_480x320.webp" alt="Contextual resource 3"></div>
+                  <h3>Strange Noise From Your Engine? A Mechanic Can Tell You What It Is</h3>
+                  <div class="label">Auto • 2 min read</div>
+                </a>
+              </div>
+            </div>
+
+            <p>FSIS has classified this as a Class I recall, the agency&rsquo;s most serious category. A Class I designation means there is a reasonable probability that consuming the product will cause serious adverse health consequences or death. That classification reflects the regulatory breach rather than any confirmed contamination, and no illnesses or injuries have been reported. Because the product skipped the checkpoint entirely, regulators have no verified information about its condition when it entered the country, so the highest risk category applies by default.</p>
+
+            <div class="module">
+              <a href="https://afflat3e1.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=22645&amp;c=918277&amp;a=310677&amp;k=08A6BBBDF6F7A0640ED8BADA005D5E27&amp;l=23506" target="_blank" rel="nofollow noopener sponsored"><div class="img ad-600"><img src="assets/AD_INLINE_1_beef_600x400.webp" alt="In-article sponsored display"></div></a>
+            </div>
+
+            <h2>What consumers should do now</h2>
+
+            <p>Regulators say their main concern is that the beef may already be sitting in home refrigerators and freezers. The freeze-by dates extend into mid-September, so the window in which this meat remains in circulation has not closed.</p>
+
+            <p>Consumers who purchased the product should not eat it. FSIS advises throwing it away or returning it to the place of purchase. Anyone with food safety questions can reach the USDA Meat and Poultry Hotline at 888-674-6854, or file a report through the agency&rsquo;s Electronic Consumer Complaint Monitoring System.</p>
+
+            <p>The USDA has not published a list of specific stores. The recall notice states only that the products went to distributors and retailers in Florida and Texas, and it remains unclear whether those distributors moved any of the meat beyond those two states.</p>
+
+            <h2>Not an isolated case</h2>
+
+            <p>This is the second recall of its kind in recent months tied to the same type of import paperwork failure. Earlier this summer, FSIS issued another Class I recall covering more than 12,000 pounds of smoked bacon imported from Canada.</p>
+
+            <p>Argentine beef accounts for a small share of American beef imports, roughly two percent by most estimates. The recall arrives during a broader debate over expanding those imports, and it has drawn attention from cattle industry groups who have questioned whether increased foreign supply can be adequately inspected.</p>
+
+            <p>For shoppers, the practical takeaway is narrower. Check the freezer, look for the establishment number and shipping mark, and do not eat anything that matches.</p>
+          </div>
+        </div>
+      </article>
+
+      <section class="module">
+        <h2>Event Timeline</h2>
+        <div class="timeline">
+          <a class="timeline-item" href="#">
+            <div class="time">Announced</div>
+            <div>
+              <strong>Official recall notices are the first place details get updated.</strong>
+              <div class="label">Agency notices carry the establishment numbers, shipping marks and date codes that identify affected product.</div>
+            </div>
+          </a>
+          <a class="timeline-item" href="#">
+            <div class="time">This week</div>
+            <div>
+              <strong>Distribution details often widen after the initial announcement.</strong>
+              <div class="label">Retailer and state-level information tends to emerge as distributors trace where the product was shipped.</div>
+            </div>
+          </a>
+          <a class="timeline-item" href="#">
+            <div class="time">Next update</div>
+            <div>
+              <strong>Follow-up action usually focuses on verification rather than new findings.</strong>
+              <div class="label">That is when agencies confirm how much product was recovered and whether any illnesses were reported.</div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="module">
+        <h2>Recommended resources</h2>
+        <div class="tiles three">
+          <a class="tile" href="https://afflat3e3.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=21096&amp;c=918277&amp;a=310677&amp;k=A94DD886C632534B8E51575BFFFF8B07&amp;l=22025" target="_blank" rel="nofollow noopener sponsored">
+            <div class="img inline-rect"><img src="assets/IMG_RECO_1_beef_480x320.webp" alt="Recommended resource 1"></div>
+            <h3>Recall Notices Are Rising. Here Is What Consumers Can Actually Do</h3>
+            <div class="label">Consumer • 4 min read</div>
+          </a>
+          <a class="tile" href="https://afflat3e3.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=17722&amp;c=918277&amp;a=310677&amp;k=667C7BDC3FFBF3D6CA41A632A4DA944E&amp;l=25950" target="_blank" rel="nofollow noopener sponsored">
+            <div class="img inline-rect"><img src="assets/IMG_RECO_2_beef_480x320.webp" alt="Recommended resource 2"></div>
+            <h3>Short on Cash This Month? See What You Could Qualify For</h3>
+            <div class="label">Finance • 5 min read</div>
+          </a>
+          <a class="tile" href="https://afflat3e1.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=14429&amp;c=918277&amp;a=310677&amp;k=BFCE835D07E00D2D94212461B5931EFE&amp;l=15268" target="_blank" rel="nofollow noopener sponsored">
+            <div class="img inline-rect"><img src="assets/IMG_RECO_3_480x320.webp" alt="Recommended resource 3"></div>
+            <h3>Planning a Trip? Compare Flights, Hotels and Travel Insurance</h3>
+            <div class="label">Travel • 3 min read</div>
+          </a>
+        </div>
+      </section>
+    </section>
+
+    <aside class="sidebar">
+      <div class="sidebar-stack">
+        <section>
+          <h2>Reader tools</h2>
+          <a href="https://afflat3e3.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=21096&amp;c=918277&amp;a=310677&amp;k=A94DD886C632534B8E51575BFFFF8B07&amp;l=22025" target="_blank" rel="nofollow noopener sponsored"><div class="img ad-300"><img src="assets/AD_SIDEBAR_1_beef_300x300.webp" alt="Sidebar sponsored display"></div></a>
+        </section>
+
+        <section>
+          <h2>Sponsored picks</h2>
+          <div class="sidebar-stack">
+            <a class="sponsor-item" href="https://afflat3e3.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=17722&amp;c=918277&amp;a=310677&amp;k=667C7BDC3FFBF3D6CA41A632A4DA944E&amp;l=25950" target="_blank" rel="nofollow noopener sponsored">
+              <div class="img inline-rect"><img src="assets/IMG_SPONSORED_1_480x320.webp" alt="Sponsored pick 1"></div>
+              <h3>Back Pain or Joint Pain? Watch This Short Video</h3>
+              <div class="label">Sponsored • Learn more</div>
+            </a>
+            <a class="sponsor-item" href="https://afflat3e1.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=21609&amp;c=918277&amp;a=310677&amp;k=44921D0BAACF205D65353A5D28CBF44A&amp;l=22511" target="_blank" rel="nofollow noopener sponsored">
+              <div class="img inline-rect"><img src="assets/IMG_SPONSORED_2_beef_480x320.webp" alt="Sponsored pick 2"></div>
+              <h3>Recalled Product in Your Home? Ask a Lawyer What Comes Next</h3>
+              <div class="label">Sponsored • Ask now</div>
+            </a>
+            <a class="sponsor-item" href="https://afflat3e3.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=21096&amp;c=918277&amp;a=310677&amp;k=A94DD886C632534B8E51575BFFFF8B07&amp;l=22025" target="_blank" rel="nofollow noopener sponsored">
+              <div class="img inline-rect"><img src="assets/IMG_SPONSORED_3_beef_480x320.webp" alt="Sponsored pick 3"></div>
+              <h3>Get a Real Mechanic to Answer Your Car Question</h3>
+              <div class="label">Sponsored • Get answers</div>
+            </a>
+          </div>
+        </section>
+
+        <section>
+          <h2>More services</h2>
+          <a href="https://afflat3e1.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=14429&amp;c=918277&amp;a=310677&amp;k=BFCE835D07E00D2D94212461B5931EFE&amp;l=15268" target="_blank" rel="nofollow noopener sponsored"><div class="img ad-450"><img src="assets/AD_SIDEBAR_2_beef_300x450.webp" alt="Tall sidebar sponsored display"></div></a>
+        </section>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+      <div>© <span id="yearNow">2026</span> Headline Wire Today. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <section class="asset-list"></section>
+
+  <script>
+    (function () {
+      var now = new Date();
+      var dateText = now.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+      document.getElementById('publishDate').textContent = 'Published ' + dateText;
+      document.getElementById('yearNow').textContent = now.getFullYear();
+
+      var progressBar = document.getElementById('progressBar');
+      window.addEventListener('scroll', function () {
+        var scrollTop = window.scrollY;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = Math.min(100, Math.max(0, progress)) + '%';
+      });
+    }());
+  </script>
+</body>
+</html>

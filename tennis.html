@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Headline Wire Today | American Hopes Collapse on a Brutal Day at the US Open</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #18212b;
+      --muted: #68717d;
+      --line: #dde3ea;
+      --accent: #0f4c81;
+      --accent-2: #e8f1f8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .topbar {
+      background: #0f1720;
+      color: #fff;
+      font-size: 13px;
+      padding: 10px 16px;
+      overflow: hidden;
+      border-bottom: 1px solid #243142;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .ticker {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .ticker a {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #dfe8f3;
+    }
+    header {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      z-index: 10;
+    }
+    .header-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px;
+    }
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+    .logo span { color: var(--accent); }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .utility {
+      display: flex;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .progress-wrap {
+      height: 4px;
+      background: #dfe7f0;
+    }
+    .progress-bar {
+      height: 100%;
+      width: 0;
+      background: var(--accent);
+    }
+    .page {
+      max-width: 1280px;
+      margin: 24px auto;
+      padding: 0 16px 40px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 24px;
+      align-items: start;
+    }
+    .main, .sidebar, .module, .article-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 6px 20px rgba(16, 24, 40, 0.04);
+    }
+    .article-card { overflow: hidden; }
+    .article-inner { padding: 24px; }
+    .kicker {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.1;
+      margin: 0 0 12px;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 14px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 22px;
+    }
+    .hero, .img {
+      background: linear-gradient(135deg, #edf4fb, #d9e8f6);
+      border: 1px dashed #8ca9c6;
+      color: #345a7e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 700;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .hero {
+      margin: 0 24px 24px;
+      height: auto;
+      aspect-ratio: 1536 / 1024;
+      min-height: 220px;
+    }
+    .hero img, .img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: inherit;
+    }
+    .img.inline-rect { aspect-ratio: 480 / 320; min-height: 150px; }
+    .img.ad-300 { width: 100%; aspect-ratio: 1 / 1; }
+    .img.ad-450 { width: 100%; aspect-ratio: 2 / 3; }
+    .img.ad-600 { width: 100%; aspect-ratio: 3 / 2; min-height: 220px; }
+    .article-body p {
+      margin: 0 0 18px;
+      font-size: 18px;
+    }
+    .article-body h2 {
+      margin: 30px 0 14px;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+    .native-grid, .tiles, .timeline {
+      display: grid;
+      gap: 16px;
+    }
+    .tiles.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .tile, .sponsor-item, .timeline-item, .resource-item {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+      background: #fff;
+    }
+    .tile h3, .sponsor-item h3, .resource-item h3 {
+      font-size: 18px;
+      line-height: 1.25;
+      margin: 12px 0 8px;
+    }
+    .tile .label, .resource-item .label, .sponsor-item .label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .module {
+      padding: 18px;
+      margin-top: 20px;
+    }
+    .module h2, .sidebar h2 {
+      font-size: 20px;
+      margin: 0 0 14px;
+    }
+    aside.sidebar {
+      padding: 18px;
+      position: sticky;
+      top: 56px;
+    }
+    .sidebar-stack {
+      display: grid;
+      gap: 18px;
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+    .time {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .footer {
+      margin-top: 28px;
+      background: #fff;
+      border-top: 1px solid var(--line);
+    }
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 28px 16px 40px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+    .asset-list {
+      max-width: 1280px;
+      margin: 0 auto 40px;
+      padding: 0 16px;
+    }
+    .asset-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px;
+    }
+    .asset-card h2 { margin-top: 0; }
+    .asset-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+    .asset-card li { margin: 8px 0; }
+    @media (max-width: 980px) {
+      .page { grid-template-columns: 1fr; }
+      aside.sidebar { position: static; }
+      .tiles.three { grid-template-columns: 1fr; }
+      .ticker { grid-template-columns: 1fr; gap: 8px; }
+    }
+    @media (max-width: 640px) {
+      .header-inner { flex-direction: column; align-items: flex-start; }
+      .article-inner { padding: 18px; }
+      .hero { margin: 0 18px 18px; }
+      .article-body p { font-size: 17px; }
+      .timeline-item { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="ticker">
+      <a href="https://afflat3e3.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=31666&amp;c=918277&amp;a=310677&amp;k=0&amp;l=37331&amp;s1=tennis" target="_blank" rel="nofollow noopener sponsored">US Open Seats Are Still Out There for the Final Weekend</a>
+      <a href="https://afflat3e3.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=27707&amp;c=918277&amp;a=310677&amp;k=0&amp;l=29747&amp;s1=tennis" target="_blank" rel="nofollow noopener sponsored">Got a Few Minutes? Share Your Opinion and Get Paid</a>
+      <a href="https://afflat3e1.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=32218&amp;c=918277&amp;a=310677&amp;k=0&amp;l=38079&amp;s1=tennis" target="_blank" rel="nofollow noopener sponsored">The Recovery Tool Pro Athletes Keep in Their Bag</a>
+      <a href="https://afflat3e3.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=30664&amp;c=918277&amp;a=310677&amp;k=0&amp;l=35193&amp;s1=tennis" target="_blank" rel="nofollow noopener sponsored">A $25,000 Prize Draw Is Open. Entry Takes One Minute</a>
+    </div>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo">Headline Wire <span>Today</span></div>
+      <nav>
+        <a href="#">U.S.</a>
+        <a href="#">Business</a>
+        <a href="#">Technology</a>
+        <a href="#">World</a>
+        <a href="#">Politics</a>
+        <a href="#">Health</a>
+      </nav>
+      <div class="utility">
+        <a href="#">Search</a>
+        <a href="#">Menu</a>
+      </div>
+    </div>
+    <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+  </header>
+
+  <main class="page">
+    <section class="main">
+      <article class="article-card">
+        <div class="hero">
+          <img src="assets/IMG_HERO_tennis_1536x1024.webp" alt="Player standing alone on a floodlit hard court after a lost point">
+        </div>
+        <div class="article-inner">
+          <div class="kicker">Sports</div>
+          <h1>American Hopes Collapse on a Brutal Day at the US Open</h1>
+          <div class="meta">
+            <span>By Headline Wire Today Staff</span>
+            <span id="publishDate">Published April 6, 2026</span>
+            <span>6 min read</span>
+          </div>
+
+          <div class="article-body">
+            <p>The third round of the US Open turned into one of the most punishing days of the tournament for the American contingent, with three former Grand Slam finalists knocked out inside a few hours at Flushing Meadows on Saturday.</p>
+
+            <p>The most dramatic exit belonged to Madison Keys. The No. 22 seed led Zheng Qinwen 6-1, and then 5-0 in the deciding set. She served for the match at 5-1 and held a match point. She did not win another game, losing 1-6, 7-6(3), 7-5.</p>
+
+            <h2>A comeback from nowhere</h2>
+
+            <p>Zheng, the Olympic gold medalist from the 2024 Paris Games, entered this tournament ranked No. 121 and had to win three qualifying matches just to reach the main draw. She is still working her way back from elbow surgery that pushed her down from a career-high ranking of No. 4.</p>
+
+            <div class="module">
+              <h2>Contextual links</h2>
+              <div class="tiles three">
+                <a class="resource-item" href="https://afflat3e3.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=31666&amp;c=918277&amp;a=310677&amp;k=0&amp;l=37331&amp;s1=tennis" target="_blank" rel="nofollow noopener sponsored"><div class="img inline-rect"><img src="assets/IMG_CONTEXT_1_tennis_480x320.webp" alt="Packed tennis stadium under floodlights"></div>
+                  <h3>Want to Be There for the Final Weekend in New York?</h3>
+                  <div class="label">Tickets • Live events</div></a>
+<a class="resource-item" href="https://afflat3e1.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=32218&amp;c=918277&amp;a=310677&amp;k=0&amp;l=38079&amp;s1=tennis" target="_blank" rel="nofollow noopener sponsored"><div class="img inline-rect"><img src="assets/IMG_CONTEXT_2_tennis_480x320.webp" alt="Massage roller and mobility ball on a gym floor"></div>
+                  <h3>Elbow and Shoulder Pain? See What Athletes Roll Out With</h3>
+                  <div class="label">Recovery • Shop tools</div></a>
+<a class="resource-item" href="https://afflat3e3.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=27707&amp;c=918277&amp;a=310677&amp;k=0&amp;l=29747&amp;s1=tennis" target="_blank" rel="nofollow noopener sponsored"><div class="img inline-rect"><img src="assets/IMG_CONTEXT_3_tennis_480x320.webp" alt="Person tapping a survey on a phone"></div>
+                  <h3>Who Do You Think Wins It All? Get Paid to Weigh In</h3>
+                  <div class="label">Rewards • Quick survey</div></a>
+              </div>
+            </div>
+
+            <p>"I'm just telling myself keep holding every single point, never give up, stay there and somehow little by little it just happened," Zheng said afterward. "The hard work pays off."</p>
+
+            <p>Keys, who won the 2025 Australian Open for her only major title, was candid about how quickly it turned. "I feel like I obviously got off to a really good lead, and then I just got really, I mean, got really scared, like I couldn't swing," she said. "Tennis just feels really hard right now, so I feel like that kind of took over."</p>
+
+            <p>At one point during the collapse she banged her racket against her head repeatedly and pulled off her visor in frustration. Two days earlier, in the previous round, Keys had been the one mounting the comeback, saving five match points to win a third-set tiebreaker.</p>
+
+            <div class="module">
+              <a href="https://afflat3e3.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=31666&amp;c=918277&amp;a=310677&amp;k=0&amp;l=37331&amp;s1=tennis" target="_blank" rel="nofollow noopener sponsored"><div class="img ad-600"><img src="assets/AD_INLINE_1_tennis_600x400.webp" alt="Still time to see the US Open finals, find tickets"></div></a>
+            </div>
+
+            <h2>Fritz and Anisimova follow her out</h2>
+
+            <p>The men's draw lost its highest-profile American the same afternoon. No. 9 seed Taylor Fritz built a two-set lead over No. 24 Francisco Cerundolo and then lost three straight, going down 3-6, 4-6, 6-3, 6-4, 6-4. Fritz had come through his first two rounds in straight sets without any hint of trouble.</p>
+
+            <p>Cerundolo, playing on Arthur Ashe Stadium for the first time, said the surroundings stopped bothering him as the match wore on. "I think fourth and fifth I played a really good tennis that I wasn't finding that tennis in the previous sets and the previous rounds," he said.</p>
+
+            <p>Amanda Anisimova, a US Open runner-up last year, went out to No. 24 Anastasia Potapova 6-2, 7-5. Anisimova converted just 3 of her 16 break point chances, a 19 percent rate that decided a match she spent most of chasing.</p>
+
+            <h2>What is left in the draw</h2>
+
+            <p>Iga Swiatek came through her own test, beating Marie Bouzkova in two tiebreaks to set up a meeting with Zheng in the next round. Coco Gauff, the 2023 champion here, was scheduled against Cristina Bucsa with the winner advancing to face the survivor of Alexandra Eala and Iva Jovic.</p>
+
+            <p>The tournament runs through the finals on September 13. With three former finalists gone in a single afternoon, the second week opens with a draw that looks considerably different than it did on Saturday morning.</p>
+          </div>
+        </div>
+      </article>
+
+      <section class="module">
+        <h2>Event Timeline</h2>
+        <div class="timeline">
+          <a class="timeline-item" href="#">
+            <div class="time">Aug 24, 2026</div>
+            <div><strong>Aug 24, 2026</strong><div class="label">The 2026 US Open opens at Flushing Meadows, running through the September 13 finals.</div></div>
+          </a>
+          <a class="timeline-item" href="#">
+            <div class="time">Today</div>
+            <div><strong>Today</strong><div class="label">Zheng Qinwen saves a match point and wins the final seven games to eliminate Madison Keys. Taylor Fritz and Amanda Anisimova also fall.</div></div>
+          </a>
+          <a class="timeline-item" href="#">
+            <div class="time">Next</div>
+            <div><strong>Next</strong><div class="label">Round of 16 play continues as the draw narrows toward next weekend&#x27;s finals.</div></div>
+          </a>
+        </div>
+      </section>
+      <section class="module">
+        <h2>Recommended resources</h2>
+        <div class="tiles three">
+          <a class="tile" href="https://afflat3e1.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=31052&amp;c=918277&amp;a=310677&amp;k=0&amp;l=36056&amp;s1=tennis" target="_blank" rel="nofollow noopener sponsored"><div class="img inline-rect"><img src="assets/IMG_RECO_1_tennis_480x320.webp" alt="Man exercising at home without equipment"></div>
+                  <h3>Over 40? Build Real Strength in 7 Minutes a Day</h3>
+                  <div class="label">Fitness • Start today</div></a>
+<a class="tile" href="https://afflat3e1.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=30830&amp;c=918277&amp;a=310677&amp;k=0&amp;l=37107&amp;s1=tennis" target="_blank" rel="nofollow noopener sponsored"><div class="img inline-rect"><img src="assets/IMG_RECO_2_tennis_480x320.webp" alt="Row of lit arcade claw machines"></div>
+                  <h3>Play Real Arcade Machines From Your Couch and Win Prizes</h3>
+                  <div class="label">Games • Win prizes</div></a>
+<a class="tile" href="https://afflat3e3.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=30664&amp;c=918277&amp;a=310677&amp;k=0&amp;l=35193&amp;s1=tennis" target="_blank" rel="nofollow noopener sponsored"><div class="img inline-rect"><img src="assets/IMG_RECO_3_tennis_480x320.webp" alt="Cash prize envelope and entry form"></div>
+                  <h3>Enter the $25,000 Draw Before This Week&#x27;s Entry Closes</h3>
+                  <div class="label">Sweepstakes • Enter now</div></a>
+        </div>
+      </section>
+    </section>
+
+    <aside class="sidebar">
+      <div class="sidebar-stack">
+        <section><h2>Reader tools</h2><a href="https://afflat3e1.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=32218&amp;c=918277&amp;a=310677&amp;k=0&amp;l=38079&amp;s1=tennis" target="_blank" rel="nofollow noopener sponsored"><div class="img ad-300"><img src="assets/AD_SIDEBAR_1_tennis_300x300.webp" alt="Sore shoulder, roll it out at home"></div></a></section>
+        <section><h2>Sponsored picks</h2><div class="sidebar-stack">
+          <a class="sponsor-item" href="https://afflat3e3.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=27707&amp;c=918277&amp;a=310677&amp;k=0&amp;l=29747&amp;s1=tennis" target="_blank" rel="nofollow noopener sponsored"><div class="img inline-rect"><img src="assets/IMG_SPONSORED_1_tennis_480x320.webp" alt="Smartphone survey with reward points"></div>
+                  <h3>Paid Surveys You Can Finish During a Changeover</h3>
+                  <div class="label">Sponsored • Get started</div></a>
+          <a class="sponsor-item" href="https://afflat3e1.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=31052&amp;c=918277&amp;a=310677&amp;k=0&amp;l=36056&amp;s1=tennis" target="_blank" rel="nofollow noopener sponsored"><div class="img inline-rect"><img src="assets/IMG_SPONSORED_2_tennis_480x320.webp" alt="Older man stretching in a living room"></div>
+                  <h3>No Gym, No Equipment, 15 Minutes: Workouts Built for Men Over 40</h3>
+                  <div class="label">Sponsored • Learn more</div></a>
+          <a class="sponsor-item" href="https://afflat3e1.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=30830&amp;c=918277&amp;a=310677&amp;k=0&amp;l=37107&amp;s1=tennis" target="_blank" rel="nofollow noopener sponsored"><div class="img inline-rect"><img src="assets/IMG_SPONSORED_3_tennis_480x320.webp" alt="Person playing a live arcade game on a phone"></div>
+                  <h3>Real Machines, Real Prizes, Played Live From Your Phone</h3>
+                  <div class="label">Sponsored • Play now</div></a>
+        </div></section>
+        <section><h2>More services</h2><a href="https://afflat3e1.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=30830&amp;c=918277&amp;a=310677&amp;k=0&amp;l=37107&amp;s1=tennis" target="_blank" rel="nofollow noopener sponsored"><div class="img ad-450"><img src="assets/AD_SIDEBAR_2_tennis_300x450.webp" alt="Win real prizes on live arcade machines"></div></a></section>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+      <div>© <span id="yearNow">2026</span> Headline Wire Today. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <section class="asset-list"></section>
+
+  <script>
+    (function () {
+      var now = new Date();
+      var dateText = now.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+      document.getElementById('publishDate').textContent = 'Published ' + dateText;
+      document.getElementById('yearNow').textContent = now.getFullYear();
+
+      var progressBar = document.getElementById('progressBar');
+      window.addEventListener('scroll', function () {
+        var scrollTop = window.scrollY;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = Math.min(100, Math.max(0, progress)) + '%';
+      });
+    }());
+  </script>
+</body>
+</html>

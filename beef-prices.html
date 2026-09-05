@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Headline Wire Today | Nearly 30,000 Pounds of Imported Beef Recalled After Inspection Step Was Skipped</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #18212b;
+      --muted: #68717d;
+      --line: #dde3ea;
+      --accent: #0f4c81;
+      --accent-2: #e8f1f8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .topbar {
+      background: #0f1720;
+      color: #fff;
+      font-size: 13px;
+      padding: 10px 16px;
+      overflow: hidden;
+      border-bottom: 1px solid #243142;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .ticker {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .ticker a {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #dfe8f3;
+    }
+    header {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      z-index: 10;
+    }
+    .header-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px;
+    }
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+    .logo span { color: var(--accent); }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .utility {
+      display: flex;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .progress-wrap {
+      height: 4px;
+      background: #dfe7f0;
+    }
+    .progress-bar {
+      height: 100%;
+      width: 0;
+      background: var(--accent);
+    }
+    .page {
+      max-width: 1280px;
+      margin: 24px auto;
+      padding: 0 16px 40px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 24px;
+      align-items: start;
+    }
+    .main, .sidebar, .module, .article-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 6px 20px rgba(16, 24, 40, 0.04);
+    }
+    .article-card { overflow: hidden; }
+    .article-inner { padding: 24px; }
+    .kicker {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.1;
+      margin: 0 0 12px;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 14px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 22px;
+    }
+    .hero, .img {
+      background: linear-gradient(135deg, #edf4fb, #d9e8f6);
+      border: 1px dashed #8ca9c6;
+      color: #345a7e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 700;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .hero {
+      margin: 0 24px 24px;
+      height: auto;
+      aspect-ratio: 1536 / 1024;
+      min-height: 220px;
+    }
+    .hero img, .img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: inherit;
+    }
+    .img.inline-rect { aspect-ratio: 480 / 320; min-height: 150px; }
+    .img.ad-300 { width: 100%; aspect-ratio: 1 / 1; }
+    .img.ad-450 { width: 100%; aspect-ratio: 2 / 3; }
+    .img.ad-600 { width: 100%; aspect-ratio: 3 / 2; min-height: 220px; }
+    .article-body p {
+      margin: 0 0 18px;
+      font-size: 18px;
+    }
+    .article-body h2 {
+      margin: 30px 0 14px;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+    .native-grid, .tiles, .timeline {
+      display: grid;
+      gap: 16px;
+    }
+    .tiles.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .tile, .sponsor-item, .timeline-item, .resource-item {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+      background: #fff;
+    }
+    .tile h3, .sponsor-item h3, .resource-item h3 {
+      font-size: 18px;
+      line-height: 1.25;
+      margin: 12px 0 8px;
+    }
+    .tile .label, .resource-item .label, .sponsor-item .label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .module {
+      padding: 18px;
+      margin-top: 20px;
+    }
+    .module h2, .sidebar h2 {
+      font-size: 20px;
+      margin: 0 0 14px;
+    }
+    aside.sidebar {
+      padding: 18px;
+      position: sticky;
+      top: 56px;
+    }
+    .sidebar-stack {
+      display: grid;
+      gap: 18px;
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+    .time {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .footer {
+      margin-top: 28px;
+      background: #fff;
+      border-top: 1px solid var(--line);
+    }
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 28px 16px 40px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+    .asset-list {
+      max-width: 1280px;
+      margin: 0 auto 40px;
+      padding: 0 16px;
+    }
+    .asset-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px;
+    }
+    .asset-card h2 { margin-top: 0; }
+    .asset-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+    .asset-card li { margin: 8px 0; }
+    @media (max-width: 980px) {
+      .page { grid-template-columns: 1fr; }
+      aside.sidebar { position: static; }
+      .tiles.three { grid-template-columns: 1fr; }
+      .ticker { grid-template-columns: 1fr; gap: 8px; }
+    }
+    @media (max-width: 640px) {
+      .header-inner { flex-direction: column; align-items: flex-start; }
+      .article-inner { padding: 18px; }
+      .hero { margin: 0 18px 18px; }
+      .article-body p { font-size: 17px; }
+      .timeline-item { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="ticker">
+      <a href="https://afflat3e3.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=21097&amp;c=918277&amp;a=310677&amp;k=0&amp;l=22027&amp;s1=beefprices" target="_blank" rel="nofollow noopener sponsored">High Grocery Bills? Ask a Finance Expert Online</a>
+      <a href="https://afflat3e1.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=22646&amp;c=918277&amp;a=310677&amp;k=0&amp;l=23507&amp;s1=beefprices" target="_blank" rel="nofollow noopener sponsored">Questions About Retail Pricing? Ask a Lawyer</a>
+      <a href="https://afflat3e1.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=22650&amp;c=918277&amp;a=310677&amp;k=0&amp;l=23511&amp;s1=beefprices" target="_blank" rel="nofollow noopener sponsored">Tax Questions This Year? Get an Expert Answer</a>
+      <a href="https://afflat3e1.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=31308&amp;c=918277&amp;a=310677&amp;k=0&amp;l=36975&amp;s1=beefprices" target="_blank" rel="nofollow noopener sponsored">Lower Your Energy Bill Too. See If You Qualify</a>
+    </div>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo">Headline Wire <span>Today</span></div>
+      <nav>
+        <a href="#">U.S.</a>
+        <a href="#">Business</a>
+        <a href="#">Technology</a>
+        <a href="#">World</a>
+        <a href="#">Politics</a>
+        <a href="#">Health</a>
+      </nav>
+      <div class="utility">
+        <a href="#">Search</a>
+        <a href="#">Menu</a>
+      </div>
+    </div>
+    <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+  </header>
+
+  <main class="page">
+    <section class="main">
+      <article class="article-card">
+        <div class="hero">
+          <img src="assets/IMG_HERO_beefprices_1536x1024.webp" alt="Grocery store meat aisle with beef prices displayed">
+        </div>
+        <div class="article-inner">
+          <div class="kicker">Business</div>
+          <h1>DOJ Expands Beef Price Investigation to Kroger, Walmart, Costco and Five More Retailers</h1>
+          <div class="meta">
+            <span>By Headline Wire Today Staff</span>
+            <span id="publishDate">Published April 6, 2026</span>
+            <span>6 min read</span>
+          </div>
+
+          <div class="article-body">
+            <p>The Department of Justice's Antitrust Division has sent letters to eight of the country's largest grocery retailers, requesting detailed information about their beef pricing as part of an expanding investigation into record-high beef prices. Kroger, Walmart, Publix, Albertsons, Aldi, Ahold Delhaize, Costco and Amazon all received the letters, dated July 14, from Associate Attorney General Stanley Woodward.</p>
+
+            <p>The move widens a probe that began in May 2026 targeting the four largest meatpackers, who together control roughly 85% of the U.S. fed cattle market. Investigators are now asking retailers directly for data on beef pricing strategies, profit margins, costs and purchasing arrangements dating back to 2020.</p>
+
+            <h2>Why beef got this expensive</h2>
+
+            <p>Beef and veal prices rose 9.4% in the twelve months ending in July, according to the Bureau of Labor Statistics, far outpacing the broader 3.4% inflation rate. Ground beef alone is up roughly 24% since early 2025, now averaging $6.89 a pound. The U.S. cattle herd has fallen to its lowest level in 75 years, a result of years of drought, high input costs and herd liquidation that economists say is the primary driver of the price spike.</p>
+
+            <p>The DOJ's letters ask each retailer to brief investigators on how their beef pricing and margins have changed since 2020, what has driven their own cost increases, and how they negotiate wholesale purchasing arrangements with meatpackers.</p>
+
+            <div class="module">
+              <h2>Contextual links</h2>
+              <div class="tiles three">
+                <a class="resource-item" href="https://afflat3e3.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=21097&amp;c=918277&amp;a=310677&amp;k=0&amp;l=22027&amp;s1=beefprices" target="_blank" rel="nofollow noopener sponsored"><div class="img inline-rect"><img src="assets/IMG_CONTEXT_1_beefprices_480x320.webp" alt="Wallet and cash at checkout"></div>
+                  <h3>Grocery Costs Squeezing Your Budget? Ask a Finance Expert</h3>
+                  <div class="label">Finance • Expert answers</div></a>
+<a class="resource-item" href="https://afflat3e1.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=22646&amp;c=918277&amp;a=310677&amp;k=0&amp;l=23507&amp;s1=beefprices" target="_blank" rel="nofollow noopener sponsored"><div class="img inline-rect"><img src="assets/IMG_CONTEXT_2_beefprices_480x320.webp" alt="Federal courthouse exterior"></div>
+                  <h3>Questions About Retail Pricing Practices? Ask a Lawyer</h3>
+                  <div class="label">Legal • Expert answers</div></a>
+<a class="resource-item" href="https://afflat3e1.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=22650&amp;c=918277&amp;a=310677&amp;k=0&amp;l=23511&amp;s1=beefprices" target="_blank" rel="nofollow noopener sponsored"><div class="img inline-rect"><img src="assets/IMG_CONTEXT_3_beefprices_480x320.webp" alt="Family reviewing bills at kitchen table"></div>
+                  <h3>Tax Season Questions? Talk to an Expert Now</h3>
+                  <div class="label">Tax • Expert answers</div></a>
+              </div>
+            </div>
+
+            <p>Independent producer group R-CALF USA said it supports the expanded investigation, pointing to a long-standing gap between what ranchers are paid for cattle and what consumers pay at the register. "That gap raises serious questions about whether market power is contributing disproportionately to consumer beef prices," the group said in a statement.</p>
+
+            <p>Not everyone agrees the answer is antitrust enforcement. Economists point to the historically low cattle inventory, prolonged drought conditions and steady consumer demand as the clearer explanation, arguing the supply shortage would push prices up regardless of retailer pricing behavior.</p>
+
+            <div class="module">
+              <a href="https://afflat3e3.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=21097&amp;c=918277&amp;a=310677&amp;k=0&amp;l=22027&amp;s1=beefprices" target="_blank" rel="nofollow noopener sponsored"><div class="img ad-600"><img src="assets/AD_INLINE_1_beefprices_600x400.webp" alt="Grocery bills adding up? Ask a finance expert"></div></a>
+            </div>
+
+            <p>Beef prices are expected to stay elevated well into 2027, according to Sylvain Charlebois, a food distribution and policy professor at Dalhousie University, who told Newsweek the cattle shortage will take years to resolve. In the meantime, the administration has taken other steps aimed at consumers directly, including a plan to allow 300,000 tons of imported ground beef into the country at reduced tariffs, in exchange for a 25% lower retail price on those products.</p>
+
+            <p>It remains unclear how quickly that imported beef will reach shelves, or whether the DOJ's retailer investigation will lead to any enforcement action. For now, shoppers can expect beef prices to stay a source of sticker shock at checkout.</p>
+
+            <p>The Antitrust Division has not set a public deadline for retailers to respond to the July letters.</p>
+          </div>
+        </div>
+      </article>
+
+      <section class="module">
+        <h2>Event Timeline</h2>
+        <div class="timeline">
+          <a class="timeline-item" href="#">
+            <div class="time">May 2026</div>
+            <div><strong>May 2026</strong><div class="label">DOJ opens antitrust investigation into the four largest meatpackers over beef prices.</div></div>
+          </a>
+          <a class="timeline-item" href="#">
+            <div class="time">July 14</div>
+            <div><strong>July 14</strong><div class="label">DOJ sends letters to eight major grocery retailers requesting pricing and margin data.</div></div>
+          </a>
+          <a class="timeline-item" href="#">
+            <div class="time">Ongoing</div>
+            <div><strong>Ongoing</strong><div class="label">Beef prices expected to stay elevated into 2027 as the cattle herd rebuilds.</div></div>
+          </a>
+        </div>
+      </section>
+      <section class="module">
+        <h2>Recommended resources</h2>
+        <div class="tiles three">
+          <a class="tile" href="https://afflat3e3.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=22956&amp;c=918277&amp;a=310677&amp;k=0&amp;l=24458&amp;s1=beefprices" target="_blank" rel="nofollow noopener sponsored"><div class="img inline-rect"><img src="assets/IMG_RECO_1_beefprices_480x320.webp" alt="Wallet and cash at checkout"></div>
+                  <h3>Need Cash Before Your Next Grocery Run? See If You Qualify</h3>
+                  <div class="label">Finance • Explore options</div></a>
+<a class="tile" href="https://afflat3e1.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=31308&amp;c=918277&amp;a=310677&amp;k=0&amp;l=36975&amp;s1=beefprices" target="_blank" rel="nofollow noopener sponsored"><div class="img inline-rect"><img src="assets/IMG_RECO_2_beefprices_480x320.webp" alt="Federal courthouse exterior"></div>
+                  <h3>Also Paying Too Much for Energy? Lower Your Bill Too</h3>
+                  <div class="label">Savings • Check eligibility</div></a>
+<a class="tile" href="https://afflat3e3.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=27707&amp;c=918277&amp;a=310677&amp;k=0&amp;l=29747&amp;s1=beefprices" target="_blank" rel="nofollow noopener sponsored"><div class="img inline-rect"><img src="assets/IMG_RECO_3_beefprices_480x320.webp" alt="Family reviewing bills at kitchen table"></div>
+                  <h3>Got a Few Minutes? See What You Could Earn</h3>
+                  <div class="label">Rewards • Quick survey</div></a>
+        </div>
+      </section>
+    </section>
+
+    <aside class="sidebar">
+      <div class="sidebar-stack">
+        <section><h2>Reader tools</h2><a href="https://afflat3e1.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=22646&amp;c=918277&amp;a=310677&amp;k=0&amp;l=23507&amp;s1=beefprices" target="_blank" rel="nofollow noopener sponsored"><div class="img ad-300"><img src="assets/AD_SIDEBAR_1_beefprices_300x300.webp" alt="Questions about pricing? Ask a lawyer now"></div></a></section>
+        <section><h2>Sponsored picks</h2><div class="sidebar-stack">
+          <a class="sponsor-item" href="https://afflat3e3.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=22956&amp;c=918277&amp;a=310677&amp;k=0&amp;l=24458&amp;s1=beefprices" target="_blank" rel="nofollow noopener sponsored"><div class="img inline-rect"><img src="assets/IMG_SPONSORED_1_beefprices_480x320.webp" alt="Wallet and cash at checkout"></div>
+                  <h3>Short on Cash This Month? See If You Qualify</h3>
+                  <div class="label">Sponsored • Learn more</div></a>
+          <a class="sponsor-item" href="https://afflat3e3.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=27707&amp;c=918277&amp;a=310677&amp;k=0&amp;l=29747&amp;s1=beefprices" target="_blank" rel="nofollow noopener sponsored"><div class="img inline-rect"><img src="assets/IMG_SPONSORED_2_beefprices_480x320.webp" alt="Federal courthouse exterior"></div>
+                  <h3>Take a Quick Survey and See What You Earn</h3>
+                  <div class="label">Sponsored • Get started</div></a>
+          <a class="sponsor-item" href="https://afflat3e1.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=22650&amp;c=918277&amp;a=310677&amp;k=0&amp;l=23511&amp;s1=beefprices" target="_blank" rel="nofollow noopener sponsored"><div class="img inline-rect"><img src="assets/IMG_CONTEXT_2_beefprices_480x320.webp" alt="Federal courthouse exterior"></div>
+                  <h3>Tax Questions? Talk to an Expert</h3>
+                  <div class="label">Sponsored • Ask now</div></a>
+        </div></section>
+        <section><h2>More services</h2><a href="https://afflat3e1.com/trk/lnk/045F5000-981D-4949-A934-C67C2CFB19C8/?o=31308&amp;c=918277&amp;a=310677&amp;k=0&amp;l=36975&amp;s1=beefprices" target="_blank" rel="nofollow noopener sponsored"><div class="img ad-450"><img src="assets/AD_SIDEBAR_2_beefprices_300x450.webp" alt="Lower your energy bill too. See if you qualify"></div></a></section>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+      <div>© <span id="yearNow">2026</span> Headline Wire Today. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <section class="asset-list"></section>
+
+  <script>
+    (function () {
+      var now = new Date();
+      var dateText = now.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+      document.getElementById('publishDate').textContent = 'Published ' + dateText;
+      document.getElementById('yearNow').textContent = now.getFullYear();
+
+      var progressBar = document.getElementById('progressBar');
+      window.addEventListener('scroll', function () {
+        var scrollTop = window.scrollY;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = Math.min(100, Math.max(0, progress)) + '%';
+      });
+    }());
+  </script>
+</body>
+</html>
